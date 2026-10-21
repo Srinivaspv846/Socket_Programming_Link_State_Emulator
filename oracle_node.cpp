@@ -5,7 +5,7 @@ int main(){
 
     ifstream fin("config.txt");
     string line;
-    vector<vector<int>> adj;
+    vector<vector<int>> adj;    
     while(getline(fin,line)){
 
         if(line.empty()) continue;
