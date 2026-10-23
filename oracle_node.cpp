@@ -44,7 +44,7 @@ bool extract(const string& filename,vector<vector<int>>& adj,int& num_nodes){
         if(!row.empty()) upper_adj.push_back(row);
     }
     int n=upper_adj.size()+1;
-    if(n<=1 || n>=26){cerr<<"ERROR: Invalid no of nodes ("<<n<<")."<<endl;return false;}
+    if(n<=1 || n>26){cerr<<"ERROR: Invalid no of nodes ("<<n<<")."<<endl;return false;}
     for(int i=0;i<n-1;i++){
         if((int)upper_adj[i].size()!=(n-1-i)){
             cerr<<"Error: Row "<<i<<" expected "<<(n-1-i)<<" entries, got "<<upper_adj[i].size()<<endl;
@@ -71,7 +71,7 @@ void broadcast_link_state(vector<VNClient>& clients,const vector<vector<int>>& a
     for(const auto& c : clients){
         if(c.fd!=-1 && c.index<n && c.connected_msg_rcvd) ready_count++;
     }
-    
+
     if(ready_count<n) return;
     cout<<"[ON] Broadcasting LINK-STATE to connected virtual nodes..."<<endl;
 
