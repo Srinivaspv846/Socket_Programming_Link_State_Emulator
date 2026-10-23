@@ -103,8 +103,8 @@ public class vn{
         ByteBuffer tcpAcumBuff = ByteBuffer.allocate(4096);
         ByteBuffer udpReadBuff = ByteBuffer.allocate(2048);
 
-        long lsp_period = 150000;
-        long print_period = 150000;
+        long lsp_period = 10000;
+        long print_period = 10000;
         long last_lsp_time = System.currentTimeMillis();
         long last_print_time = System.currentTimeMillis();
         Boolean is_running = true;
